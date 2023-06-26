@@ -31,6 +31,7 @@ def logout_user(request):
 	messages.success(request, "You Have Been Logged Out...")
 	return redirect('/')
 
+@csrf_exempt
 def add_record(request):
     if request.method == 'POST':
         first_name = request.POST['first_name']
@@ -69,7 +70,7 @@ def delete_record(request, pk):
 		messages.success(request, "You Must Be Logged In To Do That...")
 		return redirect('/')
 	
-
+@csrf_exempt
 def update_record(request, pk):
     if request.user.is_authenticated:
         current_record = Record.objects.get(id=pk)

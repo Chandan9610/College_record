@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,17 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://collegerecord-production.up.railway.app/']
 
-
-
-
-
-
-ASGI_APPLICATION = 'studentproject.asgi.application'
-
-
-
-WEBSOCKET_ALLOWED_HOSTS = [
-    'collegerecord-production.up.railway.app',
-    'https://collegerecord-production.up.railway.app/'
-    
+CORS_ORIGIN_WHITELIST = [
+    'https://collegerecord-production.up.railway.app/',
 ]
+
+
