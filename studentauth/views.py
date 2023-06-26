@@ -3,10 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from studentauth.models import Record
 from datetime import datetime
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
-
+@csrf_exempt
 def home(request):
 	records = Record.objects.all()
 	# Check to see if logging in
