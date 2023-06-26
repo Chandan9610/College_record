@@ -134,4 +134,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://collegerecord-production.up.railway.app/']
 
+CORS_ORIGIN_WHITELIST = [
+    'https://collegerecord-production.up.railway.app/',
+]
+
 
